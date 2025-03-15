@@ -14,5 +14,5 @@ export const { chunk, unique } = arrayUtils;
 export default {
   ...mathUtils,
   ...stringUtils,
-  ...arrayUtils
-}; 
+  ...arrayUtils,
+};

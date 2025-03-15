@@ -1,0 +1,15 @@
+# 构建输出
+dist/
+build/
+coverage/
+
+# 依赖
+node_modules/
+
+# 配置文件
+jest.config.js
+rollup.config.js
+.eslintrc.js
+
+# 其他
+*.d.ts 
