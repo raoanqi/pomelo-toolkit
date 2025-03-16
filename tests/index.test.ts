@@ -19,7 +19,10 @@ describe('Default Export', () => {
     expect(pomelo.divide(10, 2)).toBe(5);
     expect(pomelo.capitalize('hello')).toBe('Hello');
     expect(pomelo.reverse('hello')).toBe('olleh');
-    expect(pomelo.chunk([1, 2, 3, 4], 2)).toEqual([[1, 2], [3, 4]]);
+    expect(pomelo.chunk([1, 2, 3, 4], 2)).toEqual([
+      [1, 2],
+      [3, 4],
+    ]);
     expect(pomelo.unique([1, 2, 2, 3])).toEqual([1, 2, 3]);
   });
-}); 
+});

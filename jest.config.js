@@ -42,4 +42,4 @@ module.exports = {
       statements: 80,
     },
   },
-}; 
+};
