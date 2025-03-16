@@ -33,16 +33,19 @@ capitalize('hello');
 ## 可用的工具函数
 
 ### 数学运算
+
 - `add(a: number, b: number): number`
 - `subtract(a: number, b: number): number`
 - `multiply(a: number, b: number): number`
 - `divide(a: number, b: number): number`
 
 ### 字符串处理
+
 - `capitalize(str: string): string`
 - `reverse(str: string): string`
 
 ### 数组处理
+
 - `chunk<T>(array: T[], size: number): T[][]`
 - `unique<T>(array: T[]): T[]`
 
@@ -71,4 +74,4 @@ pnpm lint
 
 ## License
 
-MIT 
+MIT
