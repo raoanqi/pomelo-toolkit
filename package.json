@@ -1,6 +1,6 @@
 {
   "name": "pomelo-toolkit",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A utility function library built with TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
