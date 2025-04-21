@@ -2,6 +2,10 @@
 
 一个使用 TypeScript 开发的工具函数库，支持全量导入和按需导入。
 
+## 要求
+
+- Node.js >= 18.0.0
+
 ## 安装
 
 ```bash
@@ -16,38 +20,50 @@ pnpm add pomelo-toolkit
 import pomelo from 'pomelo-toolkit';
 
 // 使用工具函数
-pomelo.add(1, 2);
 pomelo.capitalize('hello');
+pomelo.unique([1, 1, 2, 3]);
 ```
 
 ### 按需导入
 
 ```typescript
-import { add, capitalize } from 'pomelo-toolkit';
+import { capitalize, unique } from 'pomelo-toolkit';
 
 // 使用工具函数
-add(1, 2);
 capitalize('hello');
+unique([1, 1, 2, 3]);
 ```
+
+### 浏览器直接使用
+
+```html
+<script src="https://unpkg.com/pomelo-toolkit/dist/index.umd.js"></script>
+<script>
+  // 通过全局变量 pomeloToolkit 使用
+  const result = pomeloToolkit.capitalize('hello');
+  console.log(result); // 'Hello'
+</script>
+```
+
+## 输出格式
+
+- **CommonJS**: `dist/index.js` - 适用于 Node.js 环境
+- **ES Module**: `dist/index.esm.js` - 适用于支持 ES 模块的现代环境
+- **UMD**: `dist/index.umd.js` - 通用格式，适用于浏览器及 AMD/CommonJS 环境
 
 ## 可用的工具函数
 
-### 数学运算
-
-- `add(a: number, b: number): number`
-- `subtract(a: number, b: number): number`
-- `multiply(a: number, b: number): number`
-- `divide(a: number, b: number): number`
-
 ### 字符串处理
 
-- `capitalize(str: string): string`
-- `reverse(str: string): string`
+- `capitalize(str: string): string` - 将字符串的第一个字符转换为大写
+- `reverse(str: string): string` - 反转字符串
 
 ### 数组处理
 
-- `chunk<T>(array: T[], size: number): T[][]`
-- `unique<T>(array: T[]): T[]`
+- `chunk<T>(array: T[], size: number): T[][]` - 将数组分割成指定大小的块
+- `unique<T>(array: T[]): T[]` - 移除数组中的重复元素
+- `intersection<T>(...arrays: T[][]): T[]` - 计算多个数组的交集
+- `union<T>(...arrays: T[][]): T[]` - 计算多个数组的并集
 
 ## 开发
 
@@ -60,6 +76,9 @@ pnpm dev
 
 # 构建
 pnpm build
+
+# 生产环境构建（不生成 sourcemap）
+pnpm build:prod
 
 # 运行测试
 pnpm test

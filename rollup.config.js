@@ -9,27 +9,43 @@ const { dts } = require('rollup-plugin-dts');
 // 导入 package.json 文件，用于获取输出文件路径等配置
 const packageJson = require('./package.json');
 
+// 判断当前是否为生产环境，NODE_ENV=production 则为生产环境
+const isProduction = process.env.NODE_ENV === 'production';
+console.log(`Building for ${isProduction ? 'production' : 'development'}...`);
+
+// 库的名称，用于 UMD 格式输出
+const libraryName = 'pomeloToolkit';
+
 // 导出 Rollup 配置数组，每个对象代表一个独立的构建任务
 module.exports = [
   // 第一个构建任务：构建主要的 JavaScript 代码
   {
     // 指定构建的入口文件
     input: 'src/index.ts',
-    // 指定构建的输出配置，这里有两种格式的输出
+    // 指定构建的输出配置
     output: [
       {
         // CommonJS 格式输出，用于 Node.js 环境
         file: packageJson.main, // 从 package.json 中获取输出文件路径（dist/index.js）
         format: 'cjs', // CommonJS 格式
-        sourcemap: true, // 生成 source map 文件，便于调试
+        sourcemap: !isProduction, // 只在开发环境下生成 source map
         exports: 'named', // 使用命名导出方式，而不是默认导出
       },
       {
         // ES Module 格式输出，用于现代浏览器和打包工具
         file: packageJson.module, // 从 package.json 中获取输出文件路径（dist/index.esm.js）
         format: 'esm', // ES Module 格式
-        sourcemap: true, // 生成 source map 文件
+        sourcemap: !isProduction, // 只在开发环境下生成 source map
         exports: 'named', // 使用命名导出方式
+      },
+      {
+        // UMD 格式输出，用于浏览器环境
+        file: packageJson.browser, // 从 package.json 中获取输出文件路径（dist/index.umd.js）
+        format: 'umd', // UMD 格式
+        name: libraryName, // 指定全局变量名，在浏览器中通过 window[libraryName] 访问
+        sourcemap: !isProduction, // 只在开发环境下生成 source map
+        exports: 'named', // 使用命名导出方式
+        globals: {}, // 指定外部依赖的全局变量名（如果有的话）
       },
     ],
     // 使用的插件列表
@@ -51,11 +67,13 @@ module.exports = [
     // 指定声明文件的入口
     input: 'dist/types/index.d.ts',
     // 声明文件的输出配置
-    output: [{ 
-      file: 'dist/index.d.ts', // 输出到单个声明文件
-      format: 'esm' // 使用 ES Module 格式
-    }],
+    output: [
+      {
+        file: 'dist/index.d.ts', // 输出到单个声明文件
+        format: 'esm', // 使用 ES Module 格式
+      },
+    ],
     // 使用 dts 插件处理声明文件
     plugins: [dts()],
   },
-]; 
+];
