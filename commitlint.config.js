@@ -18,7 +18,7 @@ module.exports = {
         'test', // 测试用例相关修改
       ],
     ],
-    'type-case': [2, 'always', 'lower'], // 类型必须小写
+    'type-case': [2, 'always', 'lowercase'], // 类型必须小写
     'type-empty': [2, 'never'], // 类型不能为空
     'subject-empty': [2, 'never'], // 主题不能为空
     'subject-full-stop': [2, 'never', '.'], // 主题不能以.结尾
