@@ -22,16 +22,18 @@ import pomelo from 'pomelo-toolkit';
 // 使用工具函数
 pomelo.capitalize('hello');
 pomelo.unique([1, 1, 2, 3]);
+pomelo.cleanObject({ name: 'pomelo', age: '' }); // { name: 'pomelo' }
 ```
 
 ### 按需导入
 
 ```typescript
-import { capitalize, unique } from 'pomelo-toolkit';
+import { capitalize, unique, cleanObject } from 'pomelo-toolkit';
 
 // 使用工具函数
 capitalize('hello');
 unique([1, 1, 2, 3]);
+cleanObject({ name: 'pomelo', age: '' }); // { name: 'pomelo' }
 ```
 
 ### 浏览器直接使用
@@ -64,6 +66,10 @@ unique([1, 1, 2, 3]);
 - `unique<T>(array: T[]): T[]` - 移除数组中的重复元素
 - `intersection<T>(...arrays: T[][]): T[]` - 计算多个数组的交集
 - `union<T>(...arrays: T[][]): T[]` - 计算多个数组的并集
+
+### 对象处理
+
+- `cleanObject<T>(obj: T): Partial<T>` - 清理对象中的空值（空字符串、null、undefined）
 
 ## 开发
 

@@ -8,6 +8,7 @@ describe('Default Export', () => {
     expect(typeof pomelo.unique).toBe('function');
     expect(typeof pomelo.intersection).toBe('function');
     expect(typeof pomelo.union).toBe('function');
+    expect(typeof pomelo.cleanObject).toBe('function');
   });
 
   it('should correctly execute the exported functions', () => {
@@ -20,5 +21,8 @@ describe('Default Export', () => {
     expect(pomelo.unique([1, 2, 2, 3])).toEqual([1, 2, 3]);
     expect(pomelo.intersection([1, 2, 3], [2, 3, 4])).toEqual([2, 3]);
     expect(pomelo.union([1, 2], [2, 3], [3, 4])).toEqual([1, 2, 3, 4]);
+    expect(pomelo.cleanObject({ name: 'pomelo', age: '' })).toEqual({
+      name: 'pomelo',
+    });
   });
 });
