@@ -4,7 +4,7 @@ describe('Object Utils', () => {
   describe('cleanObject', () => {
     it('should remove empty string, null, and undefined values from object', () => {
       const input = {
-        name: 'pomelo',
+        name: 'toolkit',
         age: '',
         gender: null,
         address: undefined,
@@ -13,7 +13,7 @@ describe('Object Utils', () => {
       };
 
       const expected = {
-        name: 'pomelo',
+        name: 'toolkit',
         isActive: false,
         count: 0,
       };
@@ -33,11 +33,11 @@ describe('Object Utils', () => {
     });
 
     it('should not modify the original object', () => {
-      const input = { name: 'pomelo', age: '' };
+      const input = { name: 'toolkit', age: '' };
       const result = cleanObject(input);
 
-      expect(result).toEqual({ name: 'pomelo' });
-      expect(input).toEqual({ name: 'pomelo', age: '' });
+      expect(result).toEqual({ name: 'toolkit' });
+      expect(input).toEqual({ name: 'toolkit', age: '' });
       expect(result).not.toBe(input); // Should be a new object
     });
 
@@ -53,7 +53,7 @@ describe('Object Utils', () => {
 
     it('should handle nested objects but not clean them', () => {
       const input = {
-        name: 'pomelo',
+        name: 'toolkit',
         info: {
           age: '',
           gender: null,
@@ -61,7 +61,7 @@ describe('Object Utils', () => {
       };
 
       const expected = {
-        name: 'pomelo',
+        name: 'toolkit',
         info: {
           age: '',
           gender: null,
@@ -69,6 +69,14 @@ describe('Object Utils', () => {
       };
 
       expect(cleanObject(input)).toEqual(expected);
+    });
+
+    it('should return a new object without modifying the original', () => {
+      const input = { name: 'toolkit', age: '' };
+      const result = cleanObject(input);
+
+      expect(result).toEqual({ name: 'toolkit' });
+      expect(input).toEqual({ name: 'toolkit', age: '' });
     });
   });
 });

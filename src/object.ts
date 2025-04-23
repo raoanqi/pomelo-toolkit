@@ -4,8 +4,8 @@
  * @returns 清理后的新对象，原对象不会被修改
  * @example
  * ```ts
- * cleanObject({ name: 'pomelo', age: '', gender: null, address: undefined });
- * // 返回 { name: 'pomelo' }
+ * cleanObject({ name: 'toolkit', age: '', gender: null, address: undefined });
+ * // 返回 { name: 'toolkit' }
  * ```
  */
 export const cleanObject = <T extends Record<string, unknown>>(

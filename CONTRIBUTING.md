@@ -1,16 +1,17 @@
 # 贡献指南
 
-pomelo-toolkit 欢迎一切对本项目有兴趣的人员，下面是关于如何贡献的指南，帮助你参与到项目中来。
+@xiaoyueqinglan/toolkit 欢迎一切对本项目有兴趣的人员，下面是关于如何贡献的指南，帮助你参与到项目中来。
 
-## 开发流程
+## 如何开始
 
-1. Fork 这个仓库
-2. 克隆你 fork 的仓库到本地
+1. 首先，将本仓库 fork 到你的 GitHub 账号下。
 
-   ```bash
-   git clone https://github.com/raoanqi/pomelo-toolkit.git
-   cd pomelo-toolkit
-   ```
+2. 然后，克隆你 fork 的仓库到本地:
+
+```bash
+git clone https://github.com/yourusername/@xiaoyueqinglan/toolkit.git
+cd @xiaoyueqinglan/toolkit
+```
 
 3. 安装依赖
 
@@ -75,9 +76,9 @@ pomelo-toolkit 欢迎一切对本项目有兴趣的人员，下面是关于如�
 如果你想添加新的工具函数，请遵循以下步骤：
 
 1. 在 `src` 目录中添加你的函数
-2. 确保导出你的函数（命名导出和默认导出）
-3. 在 `tests` 目录中为你的函数添加测试
-4. 更新 README.md 中的文档
+1. 确保导出你的函数（命名导出和默认导出）
+1. 在 `tests` 目录中为你的函数添加测试
+1. 更新 README.md 中的文档
 
 ## 代码风格
 
@@ -100,9 +101,9 @@ pnpm test
 只有项目维护者才能发布新版本。发布流程如下：
 
 1. 更新 package.json 中的版本号
-2. 运行 `pnpm build` 构建项目
-3. 运行 `pnpm test` 确保所有测试通过
-4. 运行 `pnpm publish --access public` 发布到 npm
+1. 运行 `pnpm build` 构建项目
+1. 运行 `pnpm test` 确保所有测试通过
+1. 运行 `pnpm publish --access public` 发布到 npm
 
 ## 许可证
 

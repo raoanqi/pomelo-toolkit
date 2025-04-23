@@ -1,11 +1,14 @@
 {
-  "name": "pomelo-toolkit",
-  "version": "2.1.0",
+  "name": "@xiaoyueqinglan/toolkit",
+  "version": "1.0.0",
   "description": "A utility function library built with TypeScript",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "browser": "dist/index.umd.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",

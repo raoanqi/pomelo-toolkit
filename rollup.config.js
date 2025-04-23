@@ -14,7 +14,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 console.log(`Building for ${isProduction ? 'production' : 'development'}...`);
 
 // 库的名称，用于 UMD 格式输出
-const libraryName = 'pomeloToolkit';
+const libraryName = 'xiaoyueqinglanToolkit';
 
 // 导出 Rollup 配置数组，每个对象代表一个独立的构建任务
 module.exports = [

@@ -1,4 +1,4 @@
-# Pomelo Toolkit
+# @xiaoyueqinglan/toolkit
 
 一个使用 TypeScript 开发的工具函数库，支持全量导入和按需导入。
 
@@ -9,7 +9,7 @@
 ## 安装
 
 ```bash
-pnpm add pomelo-toolkit
+pnpm add @xiaoyueqinglan/toolkit
 ```
 
 ## 使用
@@ -17,32 +17,32 @@ pnpm add pomelo-toolkit
 ### 全量导入
 
 ```typescript
-import pomelo from 'pomelo-toolkit';
+import toolkit from '@xiaoyueqinglan/toolkit';
 
 // 使用工具函数
-pomelo.capitalize('hello');
-pomelo.unique([1, 1, 2, 3]);
-pomelo.cleanObject({ name: 'pomelo', age: '' }); // { name: 'pomelo' }
+toolkit.capitalize('hello');
+toolkit.unique([1, 1, 2, 3]);
+toolkit.cleanObject({ name: 'toolkit', age: '' }); // { name: 'toolkit' }
 ```
 
 ### 按需导入
 
 ```typescript
-import { capitalize, unique, cleanObject } from 'pomelo-toolkit';
+import { capitalize, unique, cleanObject } from '@xiaoyueqinglan/toolkit';
 
 // 使用工具函数
 capitalize('hello');
 unique([1, 1, 2, 3]);
-cleanObject({ name: 'pomelo', age: '' }); // { name: 'pomelo' }
+cleanObject({ name: 'toolkit', age: '' }); // { name: 'toolkit' }
 ```
 
 ### 浏览器直接使用
 
 ```html
-<script src="https://unpkg.com/pomelo-toolkit/dist/index.umd.js"></script>
+<script src="https://unpkg.com/@xiaoyueqinglan/toolkit/dist/index.umd.js"></script>
 <script>
-  // 通过全局变量 pomeloToolkit 使用
-  const result = pomeloToolkit.capitalize('hello');
+  // 通过全局变量 xiaoyueqinglanToolkit 使用
+  const result = xiaoyueqinglanToolkit.capitalize('hello');
   console.log(result); // 'Hello'
 </script>
 ```

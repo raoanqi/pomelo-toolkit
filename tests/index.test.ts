@@ -1,28 +1,28 @@
-import pomelo from '../src';
+import toolkit from '../src';
 
-describe('Default Export', () => {
+describe('Index exports', () => {
   it('should export all utility functions', () => {
-    expect(typeof pomelo.capitalize).toBe('function');
-    expect(typeof pomelo.reverse).toBe('function');
-    expect(typeof pomelo.chunk).toBe('function');
-    expect(typeof pomelo.unique).toBe('function');
-    expect(typeof pomelo.intersection).toBe('function');
-    expect(typeof pomelo.union).toBe('function');
-    expect(typeof pomelo.cleanObject).toBe('function');
+    expect(typeof toolkit.capitalize).toBe('function');
+    expect(typeof toolkit.reverse).toBe('function');
+    expect(typeof toolkit.chunk).toBe('function');
+    expect(typeof toolkit.unique).toBe('function');
+    expect(typeof toolkit.intersection).toBe('function');
+    expect(typeof toolkit.union).toBe('function');
+    expect(typeof toolkit.cleanObject).toBe('function');
   });
 
-  it('should correctly execute the exported functions', () => {
-    expect(pomelo.capitalize('hello')).toBe('Hello');
-    expect(pomelo.reverse('hello')).toBe('olleh');
-    expect(pomelo.chunk([1, 2, 3, 4], 2)).toEqual([
+  it('should work correctly with each function', () => {
+    expect(toolkit.capitalize('hello')).toBe('Hello');
+    expect(toolkit.reverse('hello')).toBe('olleh');
+    expect(toolkit.chunk([1, 2, 3, 4], 2)).toEqual([
       [1, 2],
       [3, 4],
     ]);
-    expect(pomelo.unique([1, 2, 2, 3])).toEqual([1, 2, 3]);
-    expect(pomelo.intersection([1, 2, 3], [2, 3, 4])).toEqual([2, 3]);
-    expect(pomelo.union([1, 2], [2, 3], [3, 4])).toEqual([1, 2, 3, 4]);
-    expect(pomelo.cleanObject({ name: 'pomelo', age: '' })).toEqual({
-      name: 'pomelo',
+    expect(toolkit.unique([1, 2, 2, 3])).toEqual([1, 2, 3]);
+    expect(toolkit.intersection([1, 2, 3], [2, 3, 4])).toEqual([2, 3]);
+    expect(toolkit.union([1, 2], [2, 3], [3, 4])).toEqual([1, 2, 3, 4]);
+    expect(toolkit.cleanObject({ name: 'toolkit', age: '' })).toEqual({
+      name: 'toolkit',
     });
   });
 });
